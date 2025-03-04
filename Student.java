@@ -1,15 +1,11 @@
-// Student.java
-// Name: [Your Name]
-// PRN: [Your PRN]
-// Batch: [Your Batch]
 
 public class Student {
     private String prn;
     private String name;
-    private String dob; // Date of Birth
+    private String dob; 
     private double marks;
 
-    // Constructor
+
     public Student(String prn, String name, String dob, double marks) {
         this.prn = prn;
         this.name = name;
@@ -17,7 +13,7 @@ public class Student {
         this.marks = marks;
     }
 
-    // Getters
+
     public String getPrn() {
         return prn;
     }
@@ -34,7 +30,7 @@ public class Student {
         return marks;
     }
 
-    // Setters
+    
     public void setName(String name) {
         this.name = name;
     }
@@ -47,7 +43,6 @@ public class Student {
         this.marks = marks;
     }
 
-    // Method to display student details
     public void display() {
         System.out.println("PRN: " + prn + ", Name: " + name + ", DOB: " + dob + ", Marks: " + marks);
     }
