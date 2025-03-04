@@ -1,7 +1,3 @@
-// StudentManagement.java
-// Name: [Your Name]
-// PRN: [Your PRN]
-// Batch: [Your Batch]
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,13 +6,12 @@ public class StudentManagement {
     private ArrayList<Student> students;
     private Scanner scanner;
 
-    // Constructor
+    
     public StudentManagement() {
         students = new ArrayList<>();
         scanner = new Scanner(System.in);
     }
 
-    // Method to add a student
     public void addStudent() {
         System.out.print("Enter PRN: ");
         String prn = scanner.nextLine();
@@ -33,7 +28,6 @@ public class StudentManagement {
         System.out.println("Student added successfully.");
     }
 
-    // Method to display all students
     public void displayStudents() {
         if (students.isEmpty()) {
             System.out.println("No students to display.");
@@ -44,7 +38,6 @@ public class StudentManagement {
         }
     }
 
-    // Method to search by PRN
     public void searchByPrn() {
         System.out.print("Enter PRN to search: ");
         String prn = scanner.nextLine();
@@ -57,7 +50,6 @@ public class StudentManagement {
         System.out.println("Student with PRN " + prn + " not found.");
     }
 
-    // Method to search by name
     public void searchByName() {
         System.out.print("Enter Name to search: ");
         String name = scanner.nextLine();
@@ -70,7 +62,6 @@ public class StudentManagement {
         System.out.println("Student with name " + name + " not found.");
     }
 
-    // Method to update student details
     public void updateStudent() {
         System.out.print("Enter PRN of the student to update: ");
         String prn = scanner.nextLine();
@@ -90,7 +81,6 @@ public class StudentManagement {
         System.out.println("Student with PRN " + prn + " not found.");
     }
 
-    // Method to delete a student
     public void deleteStudent() {
         System.out.print("Enter PRN of the student to delete: ");
         String prn = scanner.nextLine();
@@ -104,7 +94,6 @@ public class StudentManagement {
         System.out.println("Student with PRN " + prn + " not found.");
     }
 
-    // Main method to run the program
     public static void main(String[] args) {
         StudentManagement management = new StudentManagement();
         int choice;
