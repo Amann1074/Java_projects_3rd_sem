@@ -1,0 +1,91 @@
+// Main.java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Name: Your Name
+        // PRN: Your PRN
+        // Batch: Your Batch
+
+        Scanner scanner = new Scanner(System.in);
+        Deck deck = new Deck();
+        int choice;
+
+        do {
+            System.out.println("\nMenu:");
+            System.out.println("1. Print Deck");
+            System.out.println("2. Print Specific Card");
+            System.out.println("3. Check Same Suit");
+            System.out.println("4. Compare Ranks");
+            System.out.println("5. Find Card");
+            System.out.println("6. Deal 5 Random Cards");
+            System.out.println("7. Shuffle Deck");
+            System.out.println("8. Exit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    deck.printDeck();
+                    break;
+                case 2:
+                    System.out.print("Enter card index (0-51): ");
+                    int index = scanner.nextInt();
+                    deck.printCard(index);
+                    break;
+                case 3:
+                    System.out.print("Enter first card rank and suit (e.g., 2 Hearts): ");
+                    String rank1 = scanner.next();
+                    String suit1 = scanner.next();
+                    System.out.print("Enter second card rank and suit (e.g., 3 Diamonds): ");
+                    String rank2 = scanner.next();
+                    String suit2 = scanner.next();
+
+                    Card card1 = new Card(suit1, rank1);
+                    Card card2 = new Card(suit2, rank2);
+                    if (deck.sameCard(card1, card2)) {
+                        System.out.println("The cards are of the same suit.");
+                    } else {
+                        System.out.println("The cards are of different suits.");
+                    }
+                    break;
+                case 4:
+                    System.out.print("Enter first card rank and suit (e.g., 2 Hearts): ");
+                    String rank3 = scanner.next();
+                    String suit3 = scanner.next();
+                    System.out.print("Enter second card rank and suit (e.g., 3 Diamonds): ");
+                    String rank4 = scanner.next();
+                    String suit4 = scanner.next();
+
+                    Card card3 = new Card(suit3, rank3);
+                    Card card4 = new Card(suit4, rank4);
+                    if (deck.compareCard(card3, card4)) {
+                        System.out.println("The cards have the same rank.");
+                    } else {
+                        System.out.println("The cards have different ranks.");
+                    }
+                    break;
+                case 5:
+                    System.out.print("Enter card rank and suit to find (e.g., 2 Hearts): ");
+                    String rankToFind = scanner.next();
+                    String suitToFind = scanner.next();
+                    deck.findCard(rankToFind, suitToFind);
+                    break;
+                case 6:
+                    System.out.println("Dealing 5 random cards:");
+                    deck.dealCard();
+                    break;
+                case 7:
+                    deck.shuffleDeck();
+                    break;
+                case 8:
+                    System.out.println("Exiting the program.");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        } while (choice != 8);
+
+        scanner.close();
+    }
+}
