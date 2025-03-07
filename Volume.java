@@ -1,0 +1,4 @@
+
+interface Volume {
+    double calculateVolume();
+}
